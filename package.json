@@ -1,0 +1,36 @@
+{
+  "name": "@lodemark-systems/reflect",
+  "version": "1.0.1",
+  "description": "Reflect — automated CLAUDE.md collaboration profiles. Diagnoses instruction compliance issues backed by empirical research.",
+  "type": "module",
+  "bin": {
+    "reflect": "reflect-cli.mjs"
+  },
+  "files": [
+    "reflect-cli.mjs",
+    "skills/",
+    "hooks/",
+    "bin/",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "keywords": [
+    "claude",
+    "claude-code",
+    "ai",
+    "instructions",
+    "compliance",
+    "diagnosis",
+    "collaboration"
+  ],
+  "author": "Lodemark Systems",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lodemark-systems/reflect.git"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
