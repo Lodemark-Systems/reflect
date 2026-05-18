@@ -1,0 +1,18 @@
+{
+  "name": "reflect-ci-action",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Reflect CI — GitHub Action for AI instruction system analysis",
+  "scripts": {
+    "build": "ncc build src/index.mjs -o dist",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.3"
+  }
+}

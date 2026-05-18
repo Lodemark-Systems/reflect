@@ -1,0 +1,119 @@
+{
+  "status": "success",
+  "version": "1.0",
+  "tier": "pro",
+  "structural": {
+    "analysis": "Analyzed 2 lines across 2 sources. Found 3 items (1 finding, 1 observation, 1 flag).\n\n## Findings\n\n### 1. Instructional Dilution — Minimal System Weight\n\nYour instruction system has minimal coverage.\n\n## Observations\n\n### 2. Coverage Gaps Across Standard Domains\n\nNo testing, security, or code convention coverage.\n\n## Flags\n\n### 3. Default Behavior Overlap\n\nThe instruction may reinforce default behavior.",
+    "findings": {
+      "findings": [
+        {
+          "id": "F1",
+          "title": "Instructional Dilution — Minimal System Weight",
+          "severity": "medium",
+          "summary": "Instruction system has effective weight of 2 lines across 2 sources.",
+          "detection_type": "system_analysis",
+          "affected_files": []
+        }
+      ],
+      "observations": [
+        {
+          "id": "O1",
+          "title": "Coverage Gaps Across Standard Domains",
+          "summary": "Instruction system covers only communication tone domain."
+        }
+      ],
+      "flags": [
+        {
+          "id": "FL1",
+          "title": "Default Behavior Overlap",
+          "severity": "low",
+          "summary": "The instruction may reinforce Claude's default behavior in code environments."
+        }
+      ],
+      "strengths": [
+        {
+          "id": "S1",
+          "title": "Clean Weight Budget",
+          "summary": "At 2 lines, the system has enormous headroom."
+        }
+      ]
+    },
+    "gauge_ready": {
+      "platform": "code",
+      "effective_weight": 2,
+      "source_count": 2,
+      "always_on_weight": 2,
+      "conditional_weight": 0,
+      "on_demand_weight": 0,
+      "auto_loaded_weight": 0,
+      "enforcement_levels": { "T1": 0, "T2": 0, "T3": 0, "T4": 0, "T5": 1 },
+      "instruction_load_max": 1,
+      "instruction_load_peak_phase": "boot",
+      "gates_total": 0,
+      "gates_healthy": 0,
+      "gates_inert": 0,
+      "gates_noncompliant": 0,
+      "system_health": "green",
+      "architecture_type": "single-layer"
+    },
+    "proposals": [
+      {
+        "id": 1,
+        "target_file": "CLAUDE.md",
+        "action": "replace",
+        "location": "line 1",
+        "current_text": "# Global\nBe concise.",
+        "proposed_text": "# Global\n\nBe concise.\n\n## Code Conventions\n\n- Use TypeScript strict mode",
+        "rationale": "Add code convention coverage.",
+        "cost_inputs": {
+          "instruction_weight_lines": 14,
+          "frequency_category": "high",
+          "enforcement_tier": "T2",
+          "detection_type": "D8"
+        }
+      }
+    ]
+  },
+  "cost": {
+    "annotations": [
+      {
+        "proposal_id": 1,
+        "detection_type": "D8",
+        "cost_nature": "failure",
+        "token_waste": {
+          "monthly": 0,
+          "monthly_tokens": 0,
+          "confidence": "measured",
+          "source": "test"
+        },
+        "rework_impact": {
+          "monthly": 300,
+          "confidence": "derived",
+          "source": "test"
+        }
+      }
+    ],
+    "aggregate_token_waste": {
+      "monthly": 0.16,
+      "monthly_tokens": 10800,
+      "confidence": "measured",
+      "source": "sum"
+    },
+    "aggregate_rework_impact": {
+      "monthly": 702,
+      "confidence": "derived",
+      "source": "sum"
+    },
+    "config_used": {
+      "tokenPricePer1K": 0.015,
+      "developerHourlyRate": 100,
+      "interactionsPerDay": 50,
+      "reworkMinutes": 2
+    }
+  },
+  "usage": {
+    "prompt_tokens": 17783,
+    "completion_tokens": 2470,
+    "cache_hit": false
+  }
+}

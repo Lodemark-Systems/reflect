@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "version": "1.0",
+  "tier": "free",
+  "structural": {
+    "analysis": "Your instruction system has minimal coverage with only 2 lines across 2 sources. Consider adding code conventions, testing expectations, and security guidance to improve AI behavior consistency."
+  },
+  "behavioral": null,
+  "usage": {
+    "prompt_tokens": 8200,
+    "completion_tokens": 450,
+    "cache_hit": false
+  },
+  "rate_limit": {
+    "remaining": 3,
+    "reset": "2026-06-01T00:00:00Z"
+  }
+}

@@ -1,0 +1,40 @@
+name: 'Reflect CI'
+description: 'Analyze AI instruction files (CLAUDE.md, rules) for compliance issues'
+author: 'Lodemark Systems'
+
+branding:
+  icon: 'shield'
+  color: 'blue'
+
+inputs:
+  api-key:
+    description: 'Reflect API key (from lodemark.dev/account). Store as a GitHub Secret.'
+    required: false
+  api-url:
+    description: 'API endpoint URL. Override for testing against dev environment.'
+    required: false
+    default: 'https://api.lodemark.dev'
+  fail-on:
+    description: 'Condition that causes the check to fail. Options: red, yellow, high-finding, never.'
+    required: false
+    default: 'red'
+  comment:
+    description: 'Whether to post a PR comment with results.'
+    required: false
+    default: 'true'
+
+outputs:
+  system-health:
+    description: 'System health rating: green, yellow, or red'
+  effective-weight:
+    description: 'Effective instruction weight (lines)'
+  finding-count:
+    description: 'Number of findings (Pro tier only, 0 for Free)'
+  tier:
+    description: 'Analysis tier: free or pro'
+  passed:
+    description: 'Whether the check passed (true/false)'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.mjs'

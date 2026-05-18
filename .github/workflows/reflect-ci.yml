@@ -1,0 +1,17 @@
+name: Reflect CI
+on:
+  pull_request:
+    paths:
+      - 'CLAUDE.md'
+      - '.claude/**'
+      - '*.md'
+
+jobs:
+  reflect:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./action
